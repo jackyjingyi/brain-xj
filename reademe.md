@@ -1,0 +1,45 @@
+
+The project is designed to transform medical sacn by user's command.
+
+main process is showed below
+ 
+![image.png](https://cdn.nlark.com/yuque/0/2024/png/32575044/1724907500564-9a714c45-6076-4bdf-8cb5-cf1655ff8b48.png#averageHue=%23fefefe&clientId=u0abd35ae-64d8-4&from=paste&height=797&id=uc61760ae&originHeight=797&originWidth=1012&originalType=binary&ratio=1&rotation=0&showTitle=false&size=21140&status=done&style=none&taskId=u91423657-13d4-4154-a9a0-e7fef2d9abc&title=&width=1012)
+script example is
+```python
+ python main.py --input ./test_data/sub-0002_ses-01_T1w.nii.gz --output processed_output12.nii.gz --filter blur-rescale --rsc-outmin -800 --rsc-outmax 1200
+```
+
+input parameters are
+```shell
+--input   type str, Input NIfTI file path
+--output  type str, Output NIfTI file path.
+--filter  type str, filter type, accept "blur,resample,rescale,denoise,norm,edge,threshold", if a chain
+          process is needed, enter filter name and sepreate with "-", for instance "blur-resample-rescale",
+--blur-sigma   type float Sigma value for the blur filter (default: 1.5)
+--dn-ts		type float Time_step value for denoise filter.
+--dn-noi type float Number_of_iterations value for denoise filter.
+--th-lower type int Lower_threshold value for threshold filter.default 100
+--th-upper  type int Upper_threshold value for threshold filter. default 200
+--th-inside  type int 
+```
+| name | type  | desc | default value |
+| --- | --- | --- | --- |
+| --input | str | Input NIfTI file path | 
+ |
+| --output | str | Output NIfTI file path. | 
+ |
+| --filter | str | accept "blur,resample,rescale,denoise,norm,edge,threshold", 
+if a chain process is needed, enter filter name and sepreate with "-", for instance "blur-resample-rescale",
+ | 
+ |
+| --blur-sigma  | float | Sigma value for the blur filter | 1.5 |
+| --dn-ts | float | Time_step value for denoise filter. | 0.125 |
+| --dn-noi | int |  Number_of_iterations value for denoise filter. | 5 |
+| --th-lower | int |  Lower_threshold value for threshold filter | 100 |
+| --th-upper | int |  Upper_threshold value for threshold filter. | 200 |
+| --th-inside | int | inside value for threshold filter | 1 |
+| --th-outside | int | outside value for threshold filter | 0 |
+| --rsc-outmin | int | 
+ | 
+ |
+
