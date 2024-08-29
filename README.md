@@ -10,17 +10,6 @@ script example is
 ```
 
 input parameters are
-```shell
---input   type str, Input NIfTI file path
---output  type str, Output NIfTI file path.
---filter  type str, filter type, accept "blur,resample,rescale,denoise,norm,edge,threshold", if a chain
-          process is needed, enter filter name and sepreate with "-", for instance "blur-resample-rescale",
---blur-sigma   type float Sigma value for the blur filter (default: 1.5)
---dn-ts		type float Time_step value for denoise filter.
---dn-noi type float Number_of_iterations value for denoise filter.
---th-lower type int Lower_threshold value for threshold filter.default 100
---th-upper  type int Upper_threshold value for threshold filter. default 200
---th-inside  type int 
 ```
 | name | type  | desc | default value |
 | --- | --- | --- | --- |
